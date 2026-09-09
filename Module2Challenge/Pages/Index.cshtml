@@ -1,0 +1,26 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Miles Per Gallon Calculator";
+}
+
+<h1>Miles Per Gallon Calculator</h1>
+
+@*Main message that will be displayed on the website*@
+<form method="post">
+
+    @*The user enters in the mile they drove*@
+    <label for="MilesDriven">Miles Driven:</label>
+    <input type="number" id="MilesDriven" name="MilesDriven" required />
+
+    @*The user enters in the gallon of gas used*@
+    <label for="GallonsUsed">Gallons Used:</label>
+    <input type="number" id="GallonsUsed" name="GallonsUsed" required />
+
+    <button type="submit">Calculate MPG</button>
+</form>
+
+@if (Model.ShowResult)
+{
+    <p>Your MPG is @Model.MPG.</p>
+}
